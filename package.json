@@ -1,7 +1,7 @@
 {
   "name": "dashr-widget-imageview",
   "productName": "imageview",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "View images uploaded or sourced from the internet.",
   "main": "build/components/CoreWidget.js",
   "scripts": {

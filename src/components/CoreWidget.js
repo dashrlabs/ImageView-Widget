@@ -13,7 +13,7 @@ export default class weatherWidget extends React.Component {
     static id = "imageshow";
     static widgetName = "Image Show";
     static sizes = [
-        [2, 2],
+        [2, 2]
     ]
 
     imgError() {
@@ -23,6 +23,7 @@ export default class weatherWidget extends React.Component {
     }
 
     editImage() {
+        $('input[type="file"]').val(null);
         this.props.settings.set("image", "");
     }
 
@@ -56,21 +57,22 @@ export default class weatherWidget extends React.Component {
         const imageShow = this.props.settings.get("image", false);
 
         return (
-            <div className = "uk-container uk-margin-large-top">
+            <div className = "uk-container" style={{ position: "relative", height: "100%" }}>
 
             { imageShow?
             <a onClick={this.editImage.bind(this)}>
-            <img src={imageShow}
-                 onError={this.imgError.bind(this)}
-                 style={{ position: "absolute", top: 0, left: 0, width: 400,
-                          height: 400, zIndex: 2, backgroundColor: "white" }}
+            <div style={{ position: "absolute", top: 0, left: 0, width: "100%",
+                          height: "100%", zIndex: 2, backgroundColor: "white",
+                          backgroundImage: `url('${imageShow}')`,
+                          backgroundRepeat: "none", backgroundSize: "cover ",
+                          backgroundPosition: "center" }}
                  draggable="false"/></a>: null }
 
                 <div id="upload-drop"
                      className="uk-placeholder uk-margin-large-top
                                 uk-text-center" style={{ zIndex: 1}}>
                     <a className="uk-form-file">Please select a file
-                    <input id="upload-select" type="file" /></a>.
+                    <input id="upload-select" type="file" onChange={this.handleClick.bind(this)}  /></a>.
                 </div>
 
                 <p className="uk-text-center uk-margin uk-text-small">
@@ -79,7 +81,7 @@ export default class weatherWidget extends React.Component {
                     <div className="uk-text-center uk-form">
                         <input type="text" placeholder="Paste a valid URL here"
                                className="uk-form-width-large uk-text-center"
-                               id="urlField" />
+                               id="urlField"/>
                         <button className="uk-button uk-margin-large-top"
                                 onClick={this.handleClick.bind(this)}>
                             Get image
