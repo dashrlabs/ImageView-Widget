@@ -1,18 +1,16 @@
-imageview
+ImageView Widget
 ---------------------------
 
-Welcome to your new Widget.
+This is a standard generated Dashr Widget
 
-Running `npm publish` will get you onto the NPM repository.  It will also automatically compile your code
-
-Have fun writing ES6 modules!
+![](example.png)
 
 License
 -------
 
 The MIT License (MIT)
 
-Copyright (c) 2016 Thomas Wang
+Copyright (c) 2016 Dashr Labs
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in

@@ -13,7 +13,7 @@
     "watch": "gulp watch"
   },
   "keywords": [],
-  "author": "Thomas Wang",
+  "author": "Dashr Labs",
   "license": "MIT",
   "devDependencies": {
     "babel-eslint": "^6.1.2",
